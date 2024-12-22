@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\DysonSphereProgram.Modding.UI.Builder.0.0.5\build\DysonSphereProgram.Modding.UI.Builder.props" Condition="Exists('..\packages\DysonSphereProgram.Modding.UI.Builder.0.0.5\build\DysonSphereProgram.Modding.UI.Builder.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C86DAD44-2A36-4328-8552-6190075A155E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Audio</RootNamespace>
+    <AssemblyName>Audio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8FF531F44208A6E99DA6A57788502BF69C97EED9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Audio_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.5.0.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.9.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Extras, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Extras.2.2.1\lib\net472\NAudio.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Lame, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Lame.2.1.0\lib\netstandard2.0\NAudio.Lame.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Sdl2, Version=2.2.6.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Sdl2.2.2.6\lib\netstandard2.0\NAudio.Sdl2.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WaveFormRenderer, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WaveFormRenderer.2.0.0\lib\netstandard2.0\NAudio.WaveFormRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WindowsMediaFormat, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wma.1.0.1\lib\net35\NAudio.WindowsMediaFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=3.0.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.3.2.45\lib\net462\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.Core.3.2.45\lib\net462\protobuf-net.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundFingerprinting, Version=11.1.0.100, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SoundFingerprinting.11.1.0\lib\netstandard2.0\SoundFingerprinting.dll</HintPath>
+    </Reference>
+    <Reference Include="SoundFingerprinting.Audio.NAudio, Version=8.0.0.105, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SoundFingerprinting.Audio.NAudio.8.0.0\lib\netstandard2.0\SoundFingerprinting.Audio.NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.9.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.9.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.9.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.1\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VGAudio, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VGAudio.2.2.1\lib\net45\VGAudio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioDeviceManager.cs" />
+    <Compile Include="AudioEditor.cs" />
+    <Compile Include="AudioManager.cs" />
+    <Compile Include="AudioRecorder.cs" />
+    <Compile Include="CustomSampleProvider.cs" />
+    <Compile Include="Devices.cs" />
+    <Compile Include="EffectManager.cs" />
+    <Compile Include="Effects.cs" />
+    <Compile Include="Equalizer.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuButtonHandler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selection.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Audio_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Audio.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Audio.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\AudioDevice.datasource" />
+    <None Include="Properties\DataSources\CustomSampleProvider.datasource" />
+    <None Include="Properties\DataSources\Equalizer.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\NAudio.Codecs.ALawDecoder.datasource" />
+    <None Include="Properties\DataSources\NAudio.Codecs.ALawEncoder.datasource" />
+    <None Include="Properties\DataSources\NAudio.Codecs.Band.datasource" />
+    <None Include="Properties\DataSources\NAudio.Codecs.G722Codec.datasource" />
+    <None Include="Properties\DataSources\NAudio.Codecs.G722CodecState.datasource" />
+    <None Include="Properties\DataSources\NAudio.Codecs.MuLawDecoder.datasource" />
+    <None Include="Properties\DataSources\NAudio.Codecs.MuLawEncoder.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dmo.AudioMediaSubtypes.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dsp.BiQuadFilter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dsp.Complex.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dsp.EnvelopeGenerator+EnvelopeState.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dsp.EnvelopeGenerator.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dsp.FastFourierTransform.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dsp.ImpulseResponseConvolution.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dsp.SmbPitchShifter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Dsp.WdlResampler.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.AudioPlaybackEngine.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.AutoDisposeFileReader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.CachedSound.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.Equalizer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.EqualizerBand.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.FftEventArgs.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.LoopStream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.MaxSampleEventArgs.datasource" />
+    <None Include="Properties\DataSources\NAudio.Extras.SampleAggregator.datasource" />
+    <None Include="Properties\DataSources\NAudio.FileFormats.Wav.WaveFileChunkReader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Gui.Fader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Gui.PanSlider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Gui.Pot.datasource" />
+    <None Include="Properties\DataSources\NAudio.Gui.VolumeMeter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Gui.VolumeSlider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Gui.WaveformPainter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Gui.WaveViewer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.ID3Decoder.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.ID3TagData.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.LameConfig.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.LameDLL.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.LameMP3FileWriter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.LAMEVersion.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.ModuleInitializer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.OutputHandler.datasource" />
+    <None Include="Properties\DataSources\NAudio.Lame.ProgressHandler.datasource" />
+    <None Include="Properties\DataSources\NAudio.Mixer.BooleanMixerControl.datasource" />
+    <None Include="Properties\DataSources\NAudio.Mixer.CustomMixerControl.datasource" />
+    <None Include="Properties\DataSources\NAudio.Mixer.ListTextMixerControl.datasource" />
+    <None Include="Properties\DataSources\NAudio.Mixer.Mixer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Mixer.MixerControl.datasource" />
+    <None Include="Properties\DataSources\NAudio.Mixer.MixerLine.datasource" />
+    <None Include="Properties\DataSources\NAudio.Mixer.SignedMixerControl.datasource" />
+    <None Include="Properties\DataSources\NAudio.Mixer.UnsignedMixerControl.datasource" />
+    <None Include="Properties\DataSources\NAudio.MmException.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.Generator.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.InfoChunk.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.Instrument.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.Modulator.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.ModulatorType.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.Preset.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.PresetsChunk.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.SampleHeader.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.SFVersion.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.SoundFont.datasource" />
+    <None Include="Properties\DataSources\NAudio.SoundFont.Zone.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.BufferHelpers.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.ByteArrayExtensions.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.ByteEncoding.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.ChunkIdentifier.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.CircularBuffer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.Decibels.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.FieldDescriptionAttribute.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.FieldDescriptionHelper.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.HResult.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.IEEE.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.IgnoreDisposeStream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.NativeMethods.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.ProgressLog.datasource" />
+    <None Include="Properties\DataSources\NAudio.Utils.WavePositionExtensions.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.AcmMp3FrameDecompressor.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.AdpcmWaveFormat.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.AiffFileReader+AiffChunk.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.AiffFileReader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.AiffFileWriter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.Asio64Bit.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioCallbacks+AsioAsioMessageCallBack.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioCallbacks+AsioBufferSwitchCallBack.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioCallbacks+AsioBufferSwitchTimeInfoCallBack.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioCallbacks+AsioSampleRateDidChangeCallBack.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioCallbacks.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioChannelInfo.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioDriver.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioDriverCapability.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioDriverExt.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Asio.AsioFillBufferCallback.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.AsioAudioAvailableEventArgs.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.AsioOut.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.AudioFileReader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.BextChunkInfo.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.BlockAlignReductionStream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.BufferedWaveProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.BwfWriter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Compression.AcmDriver.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Compression.AcmFormat.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Compression.AcmFormatTag.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Compression.AcmStream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Compression.WaveFilter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Cue.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.CueList.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.CueWaveFileReader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.CueWaveFileWriter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.DirectSoundDeviceInfo.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.DirectSoundOut.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Gsm610WaveFormat.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Id3v2Tag.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.ImaAdpcmWaveFormat.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.IMp3FrameDecompressor.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.ISampleNotifier.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.ISampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.IWaveBuffer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.IWaveIn.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.IWavePlayer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.IWavePosition.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.IWaveProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.MixingWaveProvider32.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.MmTime.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.MonoToStereoProvider16.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Mp3FileReader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Mp3FileReaderBase+FrameDecompressorBuilder.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Mp3FileReaderBase.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Mp3Frame.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Mp3WaveFormat.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.MultiplexingWaveProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.RawSourceWaveStream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.RiffChunk.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleEventArgs.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.AdsrSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.ConcatenatingSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.FadeInOutSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.IPanStrategy.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.LinearPanStrategy.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.MeteringSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.MixingSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.MonoToStereoSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.MultiplexingSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.NotifyingSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.OffsetSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.PanningSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.Pcm16BitToSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.Pcm24BitToSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.Pcm32BitToSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.Pcm8BitToSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SampleChannel.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SampleProviderConverterBase.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SampleProviderEventArgs.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SampleToWaveProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SampleToWaveProvider16.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SampleToWaveProvider24.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SignalGenerator.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SinPanStrategy.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SmbPitchShiftingSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.SquareRootPanStrategy.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.StereoBalanceStrategy.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.StereoSamplePair.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.StereoToMonoSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.StreamVolumeEventArgs.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.VolumeSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.WaveToSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.WaveToSampleProvider64.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SampleProviders.WdlResamplingSampleProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SilenceProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.SimpleCompressorEffect.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.StereoToMonoProvider16.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.StoppedEventArgs.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.TrueSpeechWaveFormat.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.VolumeWaveProvider16.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Wave16ToFloatProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.Wave32To16Stream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveBuffer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveCallbackInfo.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveCapabilitiesHelpers.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveChannel32.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveExtensionMethods.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFileReader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFileWriter.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFloatTo16Provider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFormat.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFormatConversionProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFormatConversionStream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFormatCustomMarshaler.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFormatExtensible.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveFormatExtraData.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveHeader.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveIn.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInBuffer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInCapabilities.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInEvent.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInEventArgs.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInProvider.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInterop+WaveCallback.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInterop+WaveInOutOpenFlags.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInterop+WaveMessage.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveInterop.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveMixerStream32.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveOffsetStream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveOut.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveOutBuffer.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveOutCapabilities.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveOutEvent.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveOutUtils.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveProvider16.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveProvider32.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveRecorder.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.WaveStream.datasource" />
+    <None Include="Properties\DataSources\NAudio.Wave.XingHeader.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.Atrac9.Atrac9Config.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.Atrac9.Atrac9Decoder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.Atrac9.Atrac9Parameters.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.Atrac9.ChannelConfig.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.Atrac9.HuffmanCodebook.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CodecParameters.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriAdx.CriAdxCodec.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriAdx.CriAdxEncryption.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriAdx.CriAdxKey.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriAdx.CriAdxParameters.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaChannel.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaConstants.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaDecoder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaEncoder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaEncryption.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaFrame.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaKey+Type.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaKey.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.CriHcaParameters.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.CriHca.HcaInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.GcAdpcm.GcAdpcmCoefficients.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.GcAdpcm.GcAdpcmDecoder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.GcAdpcm.GcAdpcmEncoder+AdpcmEncodeBuffers.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.GcAdpcm.GcAdpcmEncoder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.GcAdpcm.GcAdpcmMath.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.GcAdpcm.GcAdpcmParameters.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Codecs.Pcm8.Pcm8Codec.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Adx.AdxConfiguration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Adx.AdxReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Adx.AdxStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Adx.AdxWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.At9.At9Configuration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.At9.At9Reader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.At9.At9Structure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.AudioWithConfig.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Configuration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Dsp.DspConfiguration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Dsp.DspReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Dsp.DspStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Dsp.DspWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Genh.GenhConfiguration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Genh.GenhReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Genh.GenhStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hca.HcaConfiguration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hca.HcaReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hca.HcaStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hca.HcaWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hps.HpsBlock.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hps.HpsBlockChannel.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hps.HpsChannelInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hps.HpsConfiguration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hps.HpsReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hps.HpsStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Hps.HpsWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.IAudioReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.IAudioWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Idsp.IdspChannelInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Idsp.IdspConfiguration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Idsp.IdspReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Idsp.IdspStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Idsp.IdspWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.BCFstmReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.BCFstmWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.BrstmReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.BrstmWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.BrwavReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.BrwavStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.BxstmConfiguration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.BxstmStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.NwVersion.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.BrstmHeader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.ChannelInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.PrefetchData.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.Reference.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.ReferenceTable.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.RegionInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.RwavChannelInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.RwavWaveInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.SizedReference.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.StreamInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.NintendoWare.Structures.TrackInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Wave.WaveConfiguration.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Wave.WaveReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Wave.WaveStructure.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Containers.Wave.WaveWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.Atrac9.Atrac9Format.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.Atrac9.Atrac9FormatBuilder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.AudioData.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.AudioTrack.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.CriAdx.CriAdxChannel.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.CriAdx.CriAdxFormat.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.CriAdx.CriAdxFormatBuilder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.CriAdx.CriAdxHelpers.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.CriHca.CriHcaFormat.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.CriHca.CriHcaFormatBuilder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.GcAdpcm.GcAdpcmChannel.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.GcAdpcm.GcAdpcmChannelBuilder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.GcAdpcm.GcAdpcmChannelInfo.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.GcAdpcm.GcAdpcmContext.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.GcAdpcm.GcAdpcmFormat.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.GcAdpcm.GcAdpcmFormatBuilder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.IAudioFormat.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.Pcm16.Pcm16Format.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.Pcm16.Pcm16FormatBuilder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.Pcm8.Pcm8Format.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.Pcm8.Pcm8FormatBuilder.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Formats.Pcm8.Pcm8SignedFormat.datasource" />
+    <None Include="Properties\DataSources\VGAudio.IProgressReport.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Arrays.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.ArrayUnpacker.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.BinaryReaderBE.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.BinaryWriterBE.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Bit.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.BitReader+OffsetBias.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.BitReader.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.BitWriter.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Byte.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Crc16.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Extensions.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Helpers.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.InterleaveExtensions.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Mdct.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Parallel.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.MediaSubtypes.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.RiffChunk.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.RiffParser.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.RiffSubChunk.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.SampleLoop.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.WaveDataChunk.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.WaveFactChunk.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.WaveFmtChunk.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.WaveFormatExtensible.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.WaveFormatTags.datasource" />
+    <None Include="Properties\DataSources\VGAudio.Utilities.Riff.WaveSmplChunk.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IconSoundControl.ico" />
+    <Content Include="IconSoundControl.png" />
+    <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <Content Include="Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NAudio.Lame.2.1.0\build\NAudio.Lame.targets" Condition="Exists('..\packages\NAudio.Lame.2.1.0\build\NAudio.Lame.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NAudio.Lame.2.1.0\build\NAudio.Lame.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NAudio.Lame.2.1.0\build\NAudio.Lame.targets'))" />
+    <Error Condition="!Exists('..\packages\Uno.Dsp.Tasks.1.4.0\build\Uno.Dsp.Tasks.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Uno.Dsp.Tasks.1.4.0\build\Uno.Dsp.Tasks.targets'))" />
+    <Error Condition="!Exists('..\packages\BASS.ASIO.1.3.1.2\build\BASS.ASIO.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BASS.ASIO.1.3.1.2\build\BASS.ASIO.targets'))" />
+    <Error Condition="!Exists('..\packages\DysonSphereProgram.Modding.UI.Builder.0.0.5\build\DysonSphereProgram.Modding.UI.Builder.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DysonSphereProgram.Modding.UI.Builder.0.0.5\build\DysonSphereProgram.Modding.UI.Builder.props'))" />
+  </Target>
+  <Import Project="..\packages\Uno.Dsp.Tasks.1.4.0\build\Uno.Dsp.Tasks.targets" Condition="Exists('..\packages\Uno.Dsp.Tasks.1.4.0\build\Uno.Dsp.Tasks.targets')" />
+  <Import Project="..\packages\BASS.ASIO.1.3.1.2\build\BASS.ASIO.targets" Condition="Exists('..\packages\BASS.ASIO.1.3.1.2\build\BASS.ASIO.targets')" />
+</Project>
